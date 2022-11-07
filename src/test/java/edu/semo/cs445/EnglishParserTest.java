@@ -20,4 +20,11 @@ public class EnglishParserTest {
 		Assertions.assertEquals(ep.parse("one"), OptionalInt.of(1));
 	}
 
+	@Test
+	public void parseFourteen() {
+		EnglishParser ep = new EnglishParser();
+		Assertions.assertEquals(ep.parse("Fourteen"), OptionalInt.of(14));
+		Assertions.assertEquals(ep.parse("FOURTEEN"), OptionalInt.of(14));
+		Assertions.assertEquals(ep.parse("fourteen"), OptionalInt.of(14));
+	}
 }

@@ -56,7 +56,7 @@ public class EnglishParser implements ParserStrategy {
 			return 12;
 		if (text.equals("thirteen"))
 			return 13;
-		if (text.equals("fourteen"))
+		if (text.equals("forteen"))
 			return 14;
 		if (text.equals("fifteen"))
 			return 15;
