@@ -7,7 +7,8 @@ import java.util.List;
 
 /**
  * A demonstration of how the strategy pattern works and can be used to solve
- * a small problem. This is the context that the parser is run w
+ * a small problem. This is the context that the parser is run within, trying
+ * each different strategy in turn.
  *
  * @author Paul Setzer
  */
@@ -32,12 +33,13 @@ public class StrategyDemonstration {
 	public void doTheThing() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String line = "";
-		while ((line = reader.readLine()) != null && !line.isBlank()) {
+		while ((line = reader.readLine()) != null) {
 			final String finalLine = line;
 			for (ParserStrategy strategy : strategiesList) {
 				// Use the strategy to turn a string into an integer, maybe
 				// If there's no integer because it couldn't parse it skips everything
-				// Otherwise the "i ->" is a new
+				// Otherwise the "i -> ..." is a new-fangled way of saying print the
+				// number if it's actually there.
 				strategy.parse(finalLine).ifPresent(i -> System.out.println(finalLine + " is " + i));
 			}
 		}

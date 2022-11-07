@@ -14,8 +14,8 @@ public interface ParserStrategy {
 	 * that represents "Maybe there's a number" more safely than using nullable
 	 * Integer.
 	 *
-	 * @param numericText
-	 * @return
+	 * @param numericText The text to turn into a number using this strategy.
+	 * @return An optional number if this string could interpret the string.
 	 */
 	public OptionalInt parse(String numericText);
 }
