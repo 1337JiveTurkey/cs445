@@ -1,6 +1,6 @@
-package edu.semo.cs445;
+package edu.semo.cs445.strategy;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.OptionalInt;
@@ -21,7 +21,7 @@ public class RomanNumeralParserTest {
 	@Test
 	public void parseEmptyString() {
 		RomanNumeralParser rnp = new RomanNumeralParser();
-		Assertions.assertEquals(rnp.parse(""), OptionalInt.empty());
+		assertEquals(rnp.parse(""), OptionalInt.empty());
 	}
 
 	/**
@@ -30,9 +30,9 @@ public class RomanNumeralParserTest {
 	@Test
 	public void parseSingleCharacters() {
 		RomanNumeralParser rnp = new RomanNumeralParser();
-		Assertions.assertEquals(rnp.parse("I"), OptionalInt.of(1));
-		Assertions.assertEquals(rnp.parse("V"), OptionalInt.of(5));
-		Assertions.assertEquals(rnp.parse("X"), OptionalInt.of(10));
+		assertEquals(rnp.parse("I"), OptionalInt.of(1));
+		assertEquals(rnp.parse("V"), OptionalInt.of(5));
+		assertEquals(rnp.parse("X"), OptionalInt.of(10));
 	}
 
 	/**
@@ -42,9 +42,9 @@ public class RomanNumeralParserTest {
 	@Test
 	public void parseDuplicates() {
 		RomanNumeralParser rnp = new RomanNumeralParser();
-		Assertions.assertEquals(rnp.parse("II"), OptionalInt.of(2));
-		Assertions.assertEquals(rnp.parse("VV"), OptionalInt.of(10));
-		Assertions.assertEquals(rnp.parse("XX"), OptionalInt.of(20));
+		assertEquals(rnp.parse("II"), OptionalInt.of(2));
+		assertEquals(rnp.parse("VV"), OptionalInt.of(10));
+		assertEquals(rnp.parse("XX"), OptionalInt.of(20));
 	}
 
 	/**
@@ -54,9 +54,9 @@ public class RomanNumeralParserTest {
 	@Test
 	public void parseDescending() {
 		RomanNumeralParser rnp = new RomanNumeralParser();
-		Assertions.assertEquals(rnp.parse("VI"), OptionalInt.of(6));
-		Assertions.assertEquals(rnp.parse("XVI"), OptionalInt.of(16));
-		Assertions.assertEquals(rnp.parse("LXVI"), OptionalInt.of(66));
+		assertEquals(rnp.parse("VI"), OptionalInt.of(6));
+		assertEquals(rnp.parse("XVI"), OptionalInt.of(16));
+		assertEquals(rnp.parse("LXVI"), OptionalInt.of(66));
 	}
 
 	/**
@@ -66,8 +66,8 @@ public class RomanNumeralParserTest {
 	@Test
 	public void parseAscending() {
 		RomanNumeralParser rnp = new RomanNumeralParser();
-		Assertions.assertEquals(rnp.parse("IV"), OptionalInt.of(4));
-		Assertions.assertEquals(rnp.parse("VX"), OptionalInt.of(5));
-		Assertions.assertEquals(rnp.parse("XL"), OptionalInt.of(40));
+		assertEquals(rnp.parse("IV"), OptionalInt.of(4));
+		assertEquals(rnp.parse("VX"), OptionalInt.of(5));
+		assertEquals(rnp.parse("XL"), OptionalInt.of(40));
 	}
 }

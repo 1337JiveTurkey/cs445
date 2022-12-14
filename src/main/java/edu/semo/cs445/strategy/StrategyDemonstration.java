@@ -1,9 +1,10 @@
-package edu.semo.cs445;
+package edu.semo.cs445.strategy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.ServiceLoader;
 
 /**
  * A demonstration of how the strategy pattern works and can be used to solve
@@ -30,12 +31,17 @@ public class StrategyDemonstration {
 			new IntParser()
 	);
 
+	private static final ServiceLoader<ParserStrategy> strategies = ServiceLoader.load(ParserStrategy.class);
+
 	public void doTheThing() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String line = "";
 		while ((line = reader.readLine()) != null) {
 			final String finalLine = line;
-			for (ParserStrategy strategy : strategiesList) {
+			if (finalLine.equalsIgnoreCase("bye")) {
+				break;
+			}
+			for (ParserStrategy strategy : strategies) {
 				// Use the strategy to turn a string into an integer, maybe
 				// If there's no integer because it couldn't parse it skips everything
 				// Otherwise the "i -> ..." is a new-fangled way of saying print the

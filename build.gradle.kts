@@ -7,7 +7,7 @@ group = "edu.semo"
 version = "1.0-SNAPSHOT"
 
 application {
-    mainClass.set("edu.semo.cs445.StrategyDemonstration")
+    mainClass.set("edu.semo.cs445.strategy.StrategyDemonstration")
 }
 
 repositories {

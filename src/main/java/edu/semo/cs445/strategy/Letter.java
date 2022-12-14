@@ -1,4 +1,4 @@
-package edu.semo.cs445;
+package edu.semo.cs445.strategy;
 
 import java.util.Collections;
 import java.util.HashMap;
