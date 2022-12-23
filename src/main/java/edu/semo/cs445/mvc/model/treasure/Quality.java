@@ -1,5 +1,7 @@
 package edu.semo.cs445.mvc.model.treasure;
 
+import edu.semo.cs445.mvc.model.RandGenEnum;
+
 public enum Quality {
 	Crappy,
 	Terrible,
@@ -12,6 +14,7 @@ public enum Quality {
 	Good,
 	Excellent,
 	Amazing,
-	Wonderful,
+	Wonderful;
 
+	public static final RandGenEnum<Quality> Random = new RandGenEnum<>(Quality.class);
 }
