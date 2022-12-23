@@ -18,10 +18,10 @@ public class Treasure {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if (quality != null) {
-			sb.append(quality);
+			sb.append(quality).append(" ");
 		}
 		if (material != null) {
-			sb.append(material);
+			sb.append(material).append(" ");
 		}
 		sb.append(type);
 		return sb.toString();
