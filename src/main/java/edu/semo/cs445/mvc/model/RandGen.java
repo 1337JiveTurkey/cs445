@@ -25,6 +25,10 @@ public abstract class RandGen<T> implements Supplier<T> {
 		return ts.get(rand.nextInt(ts.size()));
 	}
 
+	protected final T pick(T[] ts) {
+		return ts[rand.nextInt(ts.length)];
+	}
+
 	protected final boolean maybeIf(int x, int y) {
 		return x > rand.nextInt(y);
 	}

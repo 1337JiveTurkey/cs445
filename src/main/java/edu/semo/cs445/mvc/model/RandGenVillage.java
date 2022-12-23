@@ -8,6 +8,7 @@ public class RandGenVillage extends RandGen<Location> {
 			"Arn",
 			"Bel",
 			"Blan",
+			"Borel",
 			"Card",
 			"Chas",
 			"Collins",
@@ -26,6 +27,7 @@ public class RandGenVillage extends RandGen<Location> {
 			"Ox",
 			"Pen",
 			"Rath",
+			"Sal",
 			"Sobel",
 			"Tang",
 			"Wick",
@@ -47,10 +49,14 @@ public class RandGenVillage extends RandGen<Location> {
 
 	private static final RandGenString nonWordSecondHalves = new RandGenString(
 			"cester",
+			"erdal",
 			"ingham",
 			"ington",
 			"forth",
-			"wester",
+			"mal",
+			"nith",
+			"olsom",
+			"wister",
 			"fertham"
 	);
 
