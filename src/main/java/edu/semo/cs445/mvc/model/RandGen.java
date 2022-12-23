@@ -72,4 +72,14 @@ public abstract class RandGen<T> implements Supplier<T> {
 			}
 		}
 	}
+	public String getString() {
+		return get().toString();
+	}
+	public RandGen<String> asString() {
+		return new RandGen<String>() {
+			public String get() {
+				return getString();
+			}
+		};
+	}
 }
