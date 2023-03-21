@@ -8,6 +8,7 @@ public enum CheapStone implements Material {
 	Granite,
 	Marble,
 	Mica,
+	Obsidian,
 	Quartz;
 
 	public static RandGenEnum<CheapStone> Random = new RandGenEnum<>(CheapStone.class);

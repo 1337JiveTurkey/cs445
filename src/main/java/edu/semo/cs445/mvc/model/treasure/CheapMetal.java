@@ -10,7 +10,8 @@ public enum CheapMetal implements Material {
 	Lead,
 	Pewter,
 	Steel,
-	Tin;
+	Tin,
+	Zinc;
 
 	public static RandGenEnum<CheapMetal> Random = new RandGenEnum<>(CheapMetal.class);
 }

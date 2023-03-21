@@ -31,8 +31,6 @@ public class StrategyDemonstration {
 			new IntParser()
 	);
 
-	private static final ServiceLoader<ParserStrategy> strategies = ServiceLoader.load(ParserStrategy.class);
-
 	public void doTheThing() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String line = "";
@@ -41,7 +39,7 @@ public class StrategyDemonstration {
 			if (finalLine.equalsIgnoreCase("bye")) {
 				break;
 			}
-			for (ParserStrategy strategy : strategies) {
+			for (ParserStrategy strategy : strategiesList) {
 				// Use the strategy to turn a string into an integer, maybe
 				// If there's no integer because it couldn't parse it skips everything
 				// Otherwise the "i -> ..." is a new-fangled way of saying print the
