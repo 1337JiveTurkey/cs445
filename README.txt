@@ -21,7 +21,11 @@ interface and are called by the StrategyDemonstration class.
 STEPS
 
 1. Have a recent version of the JDK installed, like 17. There's more recent
-   ones out but this will do for our purposes.
+   ones out but this will do for our purposes. If you have an older version
+   installed for another class, you can have multiple versions installed but
+   will need to set the JAVA_HOME environment variable for your computer. There
+   are existing tutorials for how to set it depending on the operating system
+   you use.
 2. Take a look through the directory structure of the project. The project root
    contains the build file "build.gradle.kts" and a pair of gradle wrappers that
    allow the project to be built without Gradle installed. These are "gradlew"
