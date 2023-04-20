@@ -2,6 +2,7 @@ package edu.semo.cs445.junit;
 
 import org.junit.jupiter.api.*;
 
+import java.util.List;
 import java.util.random.RandomGenerator;
 
 /**
@@ -16,7 +17,10 @@ import java.util.random.RandomGenerator;
  * need to be static for the purposes of JUnit. If it's not then JUnit will
  * complain and won't run.
  * <br/><br/>
- * For stuff that only
+ * For stuff that needs to run before or after each test case, there's
+ * the @BeforeEach and @AfterEach annotations that work very similarly. However,
+ * these two annotations work on non-static methods instead and JUnit is fine
+ * with them.
  */
 public class TestSetupTeardownDemo {
 	/**
@@ -53,7 +57,7 @@ public class TestSetupTeardownDemo {
 	 */
 	@Test
 	public void firstTest() {
-		System.out.println("This is a testcase.");
+		System.out.println("This is a test case.");
 
 		// Read as "I assert that this block of code will throw a NullPointerException"
 		Assertions.assertThrows(NullPointerException.class, () -> {
@@ -67,9 +71,17 @@ public class TestSetupTeardownDemo {
 	 */
 	@Test
 	public void secondTest() {
-		System.out.println("This is another testcase.");
+		System.out.println("This is another test case.");
 
 		// Read as "I assert that 'rng' is not null"
 		Assertions.assertNotNull(rng, "Somehow the RNG didn't get initialized!");
+	}
+
+	@Test
+	public void thirdTest() {
+		System.out.println("This is a third test case.");
+		List<String> l = List.of("a", "b", "c");
+		Assertions.assertTrue(l.contains("a"));
+		Assertions.assertFalse(l.contains("d"));
 	}
 }
