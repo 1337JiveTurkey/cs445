@@ -35,6 +35,8 @@ ELEMENTS
 	the java.util.random classes implement.
 *   edu.semo.cs445.strategy -- A demonstration of the strategy pattern, part of
 	homework HW4. Also includes some JUnit tests.
+*   edu.semo.cs445.junit -- A demonstration of some basics of the JUnit testing
+	framework.
 
 STEPS
 
