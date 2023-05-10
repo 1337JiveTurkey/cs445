@@ -22,9 +22,10 @@ public class Deck {
 				tempCards.add(new Card(rank, suit));
 			}
 		}
+		// Shuffle
 		synchronized (RNG) {
-			for (int i=tempCards.size(); i>1; i--)
-				Collections.swap(tempCards, i-1, RNG.nextInt(i));
+			for (int i = tempCards.size(); i > 1; i--)
+				Collections.swap(tempCards, i - 1, RNG.nextInt(i));
 		}
 		cards = new ArrayDeque<>(tempCards);
 	}
